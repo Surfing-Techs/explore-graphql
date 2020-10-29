@@ -6,10 +6,10 @@
 - Clone the project
 - Run `npm i`
 - Run `npm run start` to start the app.
-- Navigates to (http://localhost:4000/graphql)[http://localhost:4000/graphql] and have fun!
+- Navigate to [http://localhost:4000/graphql](http://localhost:4000/graphql) and have fun!
 
 Graphql query example:
-``` JSON
+```
 {
   products(filter: {category: "Beberage"}) {
     name,
