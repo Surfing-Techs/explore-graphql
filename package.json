@@ -1,0 +1,27 @@
+{
+  "name": "surfing-techs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Surfing-Techs/explore-graphql.git"
+  },
+  "author": "Matias Agüero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Surfing-Techs/explore-graphql/issues"
+  },
+  "homepage": "https://github.com/Surfing-Techs/explore-graphql#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.3.0",
+    "lodash": "^4.17.20",
+    "nodemon": "^2.0.6"
+  }
+}
