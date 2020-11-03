@@ -24,6 +24,7 @@ type Store {
   id: Int,
   name: String,
   address: String,
-  city: String
+  city: String,
+  enabled: Boolean,
 }
 `);
