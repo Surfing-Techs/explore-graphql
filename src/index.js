@@ -1,10 +1,10 @@
 const express = require('express');
 const { graphqlHTTP } = require('express-graphql');
-const { buildSchema } = require('graphql');
+// const { buildSchema } = require('graphql');
 const CatalogSchema = require('./components/catalog/schemas/CatalogSchema');
 const CatalogResolver = require('./components/catalog/CatalogResolver');
 
-var app = express();
+const app = express();
 app.use('/graphql', graphqlHTTP({
   schema: CatalogSchema.schema,
   rootValue: CatalogResolver.root,

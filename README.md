@@ -28,10 +28,10 @@ Graphql query example:
 ```
 
 ### Project creation steps
-mkdir myapp
-cd myapp
-npm init
-npm install express --save
-npm install --save graphql
-npm install --save express-graphql
+mkdir myapp  
+cd myapp  
+npm init  
+npm install express --save  
+npm install --save graphql  
+npm install --save express-graphql  
 

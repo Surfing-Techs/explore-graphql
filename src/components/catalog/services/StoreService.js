@@ -1,7 +1,9 @@
-const StoreRepository = require('./../repositories/StoreRepository')
+const StoreRepository = require('../repositories/StoreRepository');
 
 const StoreService = module.exports;
 
-StoreService.find = () => StoreRepository.find();
+StoreService.find = () =>
+  StoreRepository.find();
 
-StoreService.findById = id => StoreRepository.findById(id);
+StoreService.findById = (id) =>
+  StoreRepository.findById(id);

@@ -1,11 +1,9 @@
-const ProductRepository = require('./../repositories/ProductRepository')
+const ProductRepository = require('../repositories/ProductRepository');
 
 const ProductService = module.exports;
 
-ProductService.find = filter => {
-  return ProductRepository.find(filter);
-};
+ProductService.find = (filter) =>
+  ProductRepository.find(filter);
 
-ProductService.findById = (id = 0) => {
-  return ProductRepository.findById(id);
-};
+ProductService.findById = (id = 0) =>
+  ProductRepository.findById(id);
