@@ -5,8 +5,8 @@ const CatalogResolver = module.exports;
 
 // The root provides a resolver function for each API endpoint
 CatalogResolver.root = {
-  products: ({ filter }) =>
-    ProductService.find(filter),
+  products: ({ filter, limit, offset }) =>
+    ProductService.find(filter, limit, offset),
   product: ({ id }) =>
     ProductService.findById(id),
   stores: () =>

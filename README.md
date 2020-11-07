@@ -10,21 +10,36 @@
 
 Graphql query example:
 ```
-{
-  products(filter: {category: "Beberage"}) {
-    name,
-    category
+query Products {
+
+  # This is a query by product ID
+  p5001: product(id: 5001) {
+    ...baseProductsFields,
+    description
   },
-  pp2: product(id: 2) {
-    id,
-    name,
-    category
-  },
-  pp4: product(id: 4) {
-    name,
+
+  # Product list with Pagination!
+  products(filter: {category: "Newspapers"}, limit: 15, offset: 0) {
+    ...baseProductsFields
   }
+
 }
 
+query Stores {
+
+  # Store list!
+  stores {
+    name
+  }
+  
+}
+
+# Fragment of Product, to reduce repeated selections of fields
+fragment baseProductsFields on Product {
+  id,
+  name,
+  category
+}
 ```
 
 ### Project creation steps
