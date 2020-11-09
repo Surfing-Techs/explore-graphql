@@ -8,7 +8,7 @@ input FilterInput {
   category: String
 }
 type Query {
-  products(filter: FilterInput): [Product],
+  products(filter: FilterInput, limit: Int, offset: Int): [Product],
   stores: [Store],
   product(id: Int): Product,
   store(id: Int): Store
