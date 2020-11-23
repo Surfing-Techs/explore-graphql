@@ -7,14 +7,31 @@ input FilterInput {
   name: String
   category: String
 }
+input CreateProductInput {
+  name: String!
+  description: String
+  category: String
+  brand: String
+}
+input CreateStoreInput {
+  name: String!
+}
 type Query {
   products(filter: FilterInput, limit: Int, offset: Int): [Product],
   stores: [Store],
-  product(id: Int): Product,
+  product(id: String): Product,
   store(id: Int): Store
 },
+type Mutation {
+  createProduct(
+    name: String!,
+    description: String,
+    category: String,
+    brand: String
+  ): Product
+},
 type Product {
-  id: Int,
+  id: String,
   name: String,
   description: String,
   category: String,
