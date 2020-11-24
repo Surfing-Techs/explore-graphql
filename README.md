@@ -11,27 +11,28 @@
 Graphql query example:
 ```
 query Products {
-
   # This is a query by product ID
-  p5001: product(id: 5001) {
+  NewYorkTimes: product(id: "709bc9d0-453d-4aa1-87b2-a72e622f8387") {
     ...baseProductsFields,
     description
   },
-
   # Product list with Pagination!
   products(filter: {category: "Newspapers"}, limit: 15, offset: 0) {
     ...baseProductsFields
   }
-
 }
 
 query Stores {
-
   # Store list!
   stores {
     name
   }
-  
+}
+
+mutation createProduct {
+  createProduct(name: "El País", category: "Newspapers") {
+    ...baseProductsFields
+  }
 }
 
 # Fragment of Product, to reduce repeated selections of fields

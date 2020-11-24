@@ -7,3 +7,6 @@ ProductService.find = (filter, limit, offset) =>
 
 ProductService.findById = (id = 0) =>
   ProductRepository.findById(id);
+
+ProductService.create = (product) =>
+  ProductRepository.create(product);
