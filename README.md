@@ -10,36 +10,36 @@
 
 Graphql query example:
 ```
-query Products {
-  # This is a query by product ID
-  NewYorkTimes: product(id: "709bc9d0-453d-4aa1-87b2-a72e622f8387") {
-    ...baseProductsFields,
-    description
+query Users {
+  # This is a query by user ID
+  Aurora: user(id: "f02f4f3b-b295-4940-9b1e-027fdc6b6646") {
+    ...baseUsersFields,
+    #friends { name, gender }
   },
-  # Product list with Pagination!
-  products(filter: {category: "Newspapers"}, limit: 15, offset: 0) {
-    ...baseProductsFields
+  Martin: user(id: "cdd81605-c758-41df-9fe7-bd44000f3592") {
+    ...baseUsersFields
+  },
+  
+  # User list with Pagination!
+  users(filter: {gender: "female"}, limit: 5, offset: 0) {
+    ...baseUsersFields,
+    company,
+    gender,
+    email
   }
 }
 
-query Stores {
-  # Store list!
-  stores {
-    name
-  }
-}
+mutation createUser {
+  createUser(name: "Matias Agüero", gender: "male") {
+    ...baseUsersFields,
 
-mutation createProduct {
-  createProduct(name: "El País", category: "Newspapers") {
-    ...baseProductsFields
   }
 }
 
 # Fragment of Product, to reduce repeated selections of fields
-fragment baseProductsFields on Product {
+fragment baseUsersFields on User {
   id,
-  name,
-  category
+  name
 }
 ```
 

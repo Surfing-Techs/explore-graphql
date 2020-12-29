@@ -1,5 +1,4 @@
-const ProductService = require('./services/ProductService');
-const StoreService = require('./services/StoreService');
+const UserService = require('./services/UserService');
 
 const CatalogResolver = module.exports;
 
@@ -7,17 +6,14 @@ const CatalogResolver = module.exports;
 CatalogResolver.root = {
 
   // Queries
-  products: ({ filter, limit, offset }) =>
-    ProductService.find(filter, limit, offset),
-  product: ({ id }) =>
-    ProductService.findById(id),
-  stores: () =>
-    StoreService.find(),
-  store: ({ id }) =>
-    StoreService.findById(id),
+  users: ({ filter, limit, offset }) =>
+    UserService.find(filter, limit, offset),
+  user: ({ id }) =>
+    UserService.findById(id),
 
   // Mutations
-  createProduct: (product) =>
-    ProductService.create(product),
-
+  createUser: (user) =>
+    UserService.create(user),
+  deleteUser: (id) =>
+    UserService.delete(id),
 };

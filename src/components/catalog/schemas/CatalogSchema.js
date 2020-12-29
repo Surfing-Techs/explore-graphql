@@ -4,44 +4,34 @@ const CatalogSchema = module.exports;
 
 CatalogSchema.schema = buildSchema(`
 input FilterInput {
-  name: String
-  category: String
-}
-input CreateProductInput {
-  name: String!
-  description: String
-  category: String
-  brand: String
-}
-input CreateStoreInput {
-  name: String!
-}
+  name: String,
+  gender: String,
+  company: String
+},
 type Query {
-  products(filter: FilterInput, limit: Int, offset: Int): [Product],
-  stores: [Store],
-  product(id: String): Product,
-  store(id: Int): Store
+  users(filter: FilterInput, limit: Int, offset: Int): [User],
+  user(id: String): User
 },
 type Mutation {
-  createProduct(
+  createUser(
     name: String!,
-    description: String,
-    category: String,
-    brand: String
-  ): Product
-},
-type Product {
+    gender: String,
+    company: String,
+    email: String
+  ): User,
+  deleteUser(id: String!): String
+}
+type User {
   id: String,
   name: String,
-  description: String,
-  category: String,
-  brand: String
+  gender: String,
+  company: String,
+  email: String,
+  friends: [Person]
 },
-type Store {
+type Person {
   id: Int,
   name: String,
-  address: String,
-  city: String,
-  enabled: Boolean,
+  gender: String
 }
 `);
